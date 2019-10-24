@@ -1,0 +1,93 @@
+[ 
+    {
+        "type": "HKQuantityTypeIdentifierStepCount",
+        "value": 200,
+        "unit": "count",
+        "sourceName": "SPG's iPhone Xs",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-23 10:37:45 -0300",
+        "endDate": "2019-10-23 10:37:45 -0300",
+        "creationDate": "2019-04-08 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryCalcium",
+        "value": 80,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "10.2.1",
+        "startDate": "2019-10-23 10:37:45 -0300",
+        "endDate": "2019-10-23 10:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : "caca"
+        },
+    {
+        "type": "HKQuantityTypeIdentifierBodyMass",
+        "value": 70.4547,
+        "unit": "kg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-23 09:19:45 -0300",
+        "endDate": "2019-10-23 09:19:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierHeartRate",
+        "value": 49,
+        "unit": "count/min",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-23 10:37:45 -0300",
+        "endDate": "2019-10-23 10:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBloodGlucose",
+        "value": 81,
+        "unit": "mg/dL",
+        "sourceName": "Health",
+        "sourceVersion": "10.2.1",
+        "startDate": "2019-10-23 10:37:45 -0300",
+        "endDate": "2019-10-23 10:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierFlightsClimbed",
+        "value": 1,
+        "unit": "count",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2017-11-28 08:52:44 -0300",
+        "endDate": "2017-11-28 08:52:44 -0300",
+        "creationDate": "2017-11-28 08:52:44 -0300"
+    },
+    {
+        "type": "HKWorkoutTypeIdentifier",
+        "workoutActivityType": "HKWorkoutActivityTypeSwimming",
+        "duration": 840,
+        "durationUnit": "min",
+        "totalDistance": 3218.688,
+        "totalDistanceUnit": "km",
+        "totalEnergyBurned": 90,
+        "totalEnergyBurnedUnit": "kcal",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2017-12-01 00:07:34 -0300",
+        "endDate": "2017-12-01 00:07:34 -0300",
+        "creationDate": "2017-12-01 00:10:57 -0300"
+    },
+    {
+        "type": "HKWorkoutTypeIdentifier",
+        "workoutActivityType": "HKWorkoutActivityTypeRunning",
+        "duration": 840,
+        "durationUnit": "min",
+        "totalDistance": 3218.688,
+        "totalDistanceUnit": "km",
+        "totalEnergyBurned": 90,
+        "totalEnergyBurnedUnit": "kcal",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2017-12-01 00:07:34 -0300",
+        "endDate": "2017-12-01 00:07:34 -0300",
+        "creationDate": "2017-12-01 00:10:57 -0300"
+    }
+]
