@@ -1,13 +1,496 @@
-[ 
+[     
     {
-        "type": "HKQuantityTypeIdentifierStepCount",
-        "value": 200,
+        "type": "HKQuantityTypeIdentifierHeight",
+        "value": 172,
+        "unit": "cm",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-28 08:37:45 -0300",
+        "endDate": "2019-10-28 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBodyMassIndex",
+        "value": 24.33,
         "unit": "count",
-        "sourceName": "SPG's iPhone Xs",
-        "sourceVersion": "12.1.2",
-        "startDate": "2019-10-23 10:37:45 -0300",
-        "endDate": "2019-10-23 10:37:45 -0300",
-        "creationDate": "2019-04-08 12:50:27 -0300"
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-11-11 09:24:00 -0300",
+        "endDate": "2019-11-11 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBodyFatPercentage",
+        "value": 0.15,
+        "unit": "%",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierLeanBodyMass",
+        "value": 50,
+        "unit": "kg",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierWaistCircumference",
+        "value": 10,
+        "unit": "cm",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierRestingHeartRate",
+        "value": 100,
+        "unit": "count/min",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierHeartRateVariabilitySDNN",
+        "value": 300,
+        "unit": "ms",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierOxygenSaturation",
+        "value": 0.8,
+        "unit": "%",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBodyTemperature",
+        "value": 35,
+        "unit": "degC",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierVO2Max",
+        "value": 20,
+        "unit": "mL/min·kg",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBloodAlcoholContent",
+        "value": 0.2,
+        "unit": "%",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierElectrodermalActivity",
+        "value": 300,
+        "unit": "mcS",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierInhalerUsage",
+        "value": 10,
+        "unit": "count",
+        "sourceName": "Health",
+        "sourceVersion": "11.4.1",
+        "startDate": "2019-10-29 09:24:00 -0300",
+        "endDate": "2019-10-29 09:24:00 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBloodPressureDiastolic",
+        "value": 84,
+        "unit": "mmHg",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierRespiratoryRate",
+        "value": 20,
+        "unit": "count/min",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierInsulinDelivery",
+        "value": 3,
+        "unit": "IU",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }, 
+                {
+                    "key": "HKInsulinDeliveryReason",
+                    "value": 2
+                }
+                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierNumberOfTimesFallen",
+        "value": 0,
+        "unit": "count",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierPeripheralPerfusionIndex",
+        "value": 0.2,
+        "unit": "%",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierForcedVitalCapacity",
+        "value": 2,
+        "unit": "L",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierForcedExpiratoryVolume1",
+        "value": 2,
+        "unit": "L",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierPeakExpiratoryFlowRate",
+        "value": 100,
+        "unit": "L/min",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }                
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBloodPressureSystolic",
+        "value": 122,
+        "unit": "mmHg",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierHeartRate",
+        "value": 49,
+        "unit": "count/min",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBloodGlucose",
+        "value": 81,
+        "unit": "mg/dL",
+        "sourceName": "Health",
+        "sourceVersion": "10.2.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryBiotin",
+        "value": 200,
+        "unit": "mcg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryCaffeine",
+        "value": 300,
+        "unit": "mg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryChloride",
+        "value": 105,
+        "unit": "mg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryChromium",
+        "value": 2,
+        "unit": "mcg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryIodine",
+        "value": 12,
+        "unit": "mcg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryPantothenicAcid",
+        "value": 380,
+        "unit": "mg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminD",
+        "value": 2,
+        "unit": "mg",
+        "sourceName": "Alancitos Test",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKExternalUUID",
+                 "value": "621F787A-4601-4EB5-A870-4281187B927D"
+                },
+                {
+                   "key": "HKFoodType",
+                   "value": "French Fries"
+                }
+            ]
     },
     {
         "type": "HKQuantityTypeIdentifierDietaryCalcium",
@@ -15,11 +498,750 @@
         "unit": "mg",
         "sourceName": "MyFitnessPal",
         "sourceVersion": "10.2.1",
-        "startDate": "2019-10-23 10:37:45 -0300",
-        "endDate": "2019-10-23 10:37:45 -0300",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
         "creationDate": "2019-10-23 12:50:27 -0300",
-        "metadata" : "caca"
-        },
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryCarbohydrates",
+        "value": 5,
+        "unit": "g",
+        "sourceName": "Health",
+        "sourceVersion": "10.2.1",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKFoodType",
+                 "value": "pizza"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryCholesterol",
+        "value": 10,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryCopper",
+        "value": 2,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKFoodType",
+                 "value": "pizza"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryEnergyConsumed",
+        "value": 230,
+        "unit": "kcal",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFatMonounsaturated",
+        "value": 2,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFatPolyunsaturated",
+        "value": 4,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFatSaturated",
+        "value": 2.5,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFatTotal",
+        "value": 10,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Dinner"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Dinner"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFiber",
+        "value": 6,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryFolate",
+        "value": 1683,
+        "unit": "mcg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryIron",
+        "value": 0.36,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "meal",
+                 "value": "Lunch"
+                },
+                {
+                    "key": "Meal",
+                    "value": "Lunch"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryMagnesium",
+        "value": 434,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKFoodType",
+                 "value": "pizza"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryManganese",
+        "value": 7,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKFoodType",
+                 "value": "pizza"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryNiacin",
+        "value": 69,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryPhosphorus",
+        "value": 3910,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryPotassium",
+        "value": 170,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "meal",
+                "value": "Lunch"
+               },
+               {
+                "key": "Meal",
+                "value": "Lunch"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryNiacin",
+        "value": 69,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryRiboflavin",
+        "value": 4,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietarySelenium",
+        "value": 360,
+        "unit": "mcg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryRiboflavin",
+        "value": 4,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietarySodium",
+        "value": 210,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "meal",
+                "value": "Lunch"
+               },
+               {
+                "key": "Meal",
+                "value": "Lunch"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietarySugar",
+        "value": 17,
+        "unit": "g",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "meal",
+                "value": "Lunch"
+               },
+               {
+                "key": "Meal",
+                "value": "Lunch"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryThiamin",
+        "value": 7,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminA",
+        "value": 3888,
+        "unit": "mcg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminB12",
+        "value": 8,
+        "unit": "mcg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminB6",
+        "value": 1,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminC",
+        "value": 8.4,
+        "unit": "mg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminD",
+        "value": 1,
+        "unit": "mcg",
+        "sourceName": "MyFitnessPal",
+        "sourceVersion": "19511",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKExternalUUID",
+                "value": "621F787A-4601-4EB5-A870-4281187B927D"
+               },
+            {
+                "key": "HKFoodType",
+                "value": "French Fries"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminE",
+        "value": 15,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryVitaminK",
+        "value": 121,
+        "unit": "mcg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryWater",
+        "value": 473.176,
+        "unit": "mL",
+        "sourceName": "YAZIO",
+        "sourceVersion": "541",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDietaryZinc",
+        "value": 24,
+        "unit": "mg",
+        "sourceName": "MyNetDiary",
+        "sourceVersion": "5.45",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "HKFoodType",
+                "value": "pizza"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierStepCount",
+        "value": 200,
+        "unit": "count",
+        "sourceName": "SPG's iPhone Xs",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierPushCount",
+        "value": 30,
+        "unit": "count",
+        "sourceName": "Alancitoss Phone",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceWheelchair",
+        "value": 2,
+        "unit": "km",
+        "sourceName": "Alancitoss Phone",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierSwimmingStrokeCount",
+        "value": 20,
+        "unit": "count",
+        "sourceName": "Alancitoss Phone",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceDownhillSnowSports",
+        "value": 20,
+        "unit": "km",
+        "sourceName": "Alancitoss Phone",
+        "sourceVersion": "12.1.2",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceWalkingRunning",
+        "value": 1,
+        "unit": "km",
+        "sourceName": "Alan’s iPhone (Just kidding, i dont have one)",
+        "sourceVersion": "10.0",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceCycling",
+        "value": 25,
+        "unit": "mi",
+        "sourceName": "Human",
+        "sourceVersion": "4716",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                "key": "id",
+                "value": "b4dfb20f-0d5c-42d3-8f87-e8dd519c5e3d"
+               },
+               {
+                "key": "mode",
+                "value": "biking"
+               }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBasalEnergyBurned",
+        "value": 1495,
+        "unit": "kcal",
+        "sourceName": "Connect",
+        "sourceVersion": "33",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierBasalBodyTemperature",
+        "value": 35,
+        "unit": "degC",
+        "sourceName": "Connect",
+        "sourceVersion": "33",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierUVExposure",
+        "value": 35,
+        "unit": "count",
+        "sourceName": "Connect",
+        "sourceVersion": "33",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierActiveEnergyBurned",
+        "value": 86,
+        "unit": "kcal",
+        "sourceName": "Human",
+        "sourceVersion": "4716",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "id",
+                 "value": "5a23d399-9f82-4991-ba4c-4f9db54933e6"
+                },
+                {
+                    "key": "mode",
+                    "value": "walking"
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierFlightsClimbed",
+        "value": 2,
+        "unit": "count",
+        "sourceName": "Sofia’s Apple Watch",
+        "sourceVersion": "4.3",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierNikeFuel",
+        "value": 460,
+        "unit": "count",
+        "sourceName": "Nike Training",
+        "sourceVersion": "1705091749",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceWalkingRunning",
+        "value": 1,
+        "unit": "km",
+        "sourceName": "Alan’s iPhone (Just a prank, i dont have one)",
+        "sourceVersion": "10.0",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierDistanceWalkingRunning",
+        "value": 1,
+        "unit": "km",
+        "sourceName": "Alan’s iPhone (Just a prank, i dont have one)",
+        "sourceVersion": "10.0",
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
     {
         "type": "HKQuantityTypeIdentifierBodyMass",
         "value": 70.4547,
@@ -29,36 +1251,6 @@
         "startDate": "2019-10-23 09:19:45 -0300",
         "endDate": "2019-10-23 09:19:45 -0300",
         "creationDate": "2019-10-23 12:50:27 -0300"
-    },
-    {
-        "type": "HKQuantityTypeIdentifierHeartRate",
-        "value": 49,
-        "unit": "count/min",
-        "sourceName": "Sofia’s Apple Watch",
-        "sourceVersion": "4.3",
-        "startDate": "2019-10-23 10:37:45 -0300",
-        "endDate": "2019-10-23 10:37:45 -0300",
-        "creationDate": "2019-10-23 12:50:27 -0300"
-    },
-    {
-        "type": "HKQuantityTypeIdentifierBloodGlucose",
-        "value": 81,
-        "unit": "mg/dL",
-        "sourceName": "Health",
-        "sourceVersion": "10.2.1",
-        "startDate": "2019-10-23 10:37:45 -0300",
-        "endDate": "2019-10-23 10:37:45 -0300",
-        "creationDate": "2019-10-23 12:50:27 -0300"
-    },
-    {
-        "type": "HKQuantityTypeIdentifierFlightsClimbed",
-        "value": 1,
-        "unit": "count",
-        "sourceName": "Sofia’s Apple Watch",
-        "sourceVersion": "4.3",
-        "startDate": "2017-11-28 08:52:44 -0300",
-        "endDate": "2017-11-28 08:52:44 -0300",
-        "creationDate": "2017-11-28 08:52:44 -0300"
     },
     {
         "type": "HKWorkoutTypeIdentifier",
@@ -71,9 +1263,9 @@
         "totalEnergyBurnedUnit": "kcal",
         "sourceName": "Sofia’s Apple Watch",
         "sourceVersion": "4.3",
-        "startDate": "2017-12-01 00:07:34 -0300",
-        "endDate": "2017-12-01 00:07:34 -0300",
-        "creationDate": "2017-12-01 00:10:57 -0300"
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
     },
     {
         "type": "HKWorkoutTypeIdentifier",
@@ -86,8 +1278,127 @@
         "totalEnergyBurnedUnit": "kcal",
         "sourceName": "Sofia’s Apple Watch",
         "sourceVersion": "4.3",
-        "startDate": "2017-12-01 00:07:34 -0300",
-        "endDate": "2017-12-01 00:07:34 -0300",
-        "creationDate": "2017-12-01 00:10:57 -0300"
+        "startDate": "2019-10-25 08:37:45 -0300",
+        "endDate": "2019-10-25 08:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKCategoryTypeIdentifierMindfulSession",
+        "sourceName": "Headspace",
+        "sourceVersion": "5175",
+        "startDate": "2019-10-28 08:37:45 -0300",
+        "endDate": "2019-10-28 09:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKCategoryTypeIdentifierMenstrualFlow",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "value": "HKCategoryValueMenstrualFlowUnspecified",
+        "startDate": "2019-10-29 12:00:00 -0300",
+        "endDate": "2019-10-29 12:00:00 -0300",
+        "creationDate": "2019-10-28 08:37:45 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+            },
+            {
+                "key": "HKMenstrualCycleStart",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "type": "HKCategoryTypeIdentifierIntermenstrualBleeding",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "value": "HKCategoryValueNotApplicable",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 08:37:45 -0300",
+        "creationDate": "2019-10-29 08:37:45 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+            }
+        ]
+    },
+    {
+        "type": "HKCategoryTypeIdentifierSexualActivity",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "value": "HKCategoryValueNotApplicable",
+        "startDate": "2019-10-28 08:37:45 -0300",
+        "endDate": "2019-10-28 08:37:45 -0300",
+        "creationDate": "2019-10-28 08:37:45 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+            },
+            {
+                "key": "HKSexualActivityProtectionUsed",
+                "value": 1
+            }
+        ]
+    },
+    {
+        "type": "HKCategoryTypeIdentifierSleepAnalysis",
+        "sourceName": "SleepTrack",
+        "sourceVersion": "3",
+        "value": "HKCategoryValueSleepAnalysisAsleep",
+        "startDate": "2019-10-28 08:37:45 -0300",
+        "endDate": "2019-10-28 11:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300"
+    },
+    {
+        "type": "HKCategoryTypeIdentifierSleepAnalysis",
+        "sourceName": "SleepTrack",
+        "sourceVersion": "3",
+        "value": "HKCategoryValueSleepAnalysisInBed",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 09:37:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKCategoryTypeIdentifierToothbrushingEvent",
+        "sourceName": "SleepTrack",
+        "sourceVersion": "3",
+        "startDate": "2019-10-29 08:37:45 -0300",
+        "endDate": "2019-10-29 08:39:45 -0300",
+        "creationDate": "2019-10-23 12:50:27 -0300",
+        "metadata" : [
+            {
+                 "key": "HKWasUserEntered",
+                 "value": 1
+                }
+            ]
+    },
+    {
+        "type": "HKQuantityTypeIdentifierEnvironmentalAudioExposure",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "unit": "dBASPL",
+        "value": "200",
+        "startDate": "2019-11-01 08:37:45 -0300",
+        "endDate": "2019-11-01 09:37:45 -0300",
+        "creationDate": "2019-10-28 08:37:45 -0300"
+    },
+    {
+        "type": "HKQuantityTypeIdentifierHeadphoneAudioExposure",
+        "sourceName": "Health",
+        "sourceVersion": "12.4.1",
+        "unit": "dBASPL",
+        "value": "20",
+        "startDate": "2019-11-01 08:37:45 -0300",
+        "endDate": "2019-11-01 09:37:45 -0300",
+        "creationDate": "2019-10-28 08:37:45 -0300"
     }
 ]

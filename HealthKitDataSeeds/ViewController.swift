@@ -9,132 +9,216 @@
 import UIKit
 import HealthKit
 
-
 let healthStore: HKHealthStore = HKHealthStore()
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     var allHKRecords: [HKRecord] = []
     var allHKSampels: [HKSample] = []
     
+    @IBOutlet weak var fileSelectorSwitch: UISwitch!
+    @IBOutlet weak var numberOfSamplesLabel: UILabel!
+    @IBOutlet weak var typesTableView: UITableView!
+    @IBOutlet weak var urlTextField: UITextField!
+    
+    let sharedMemory: SharedMemory = SharedMemory.global
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSwitch()
+        setupTextField()
+        setupTableView()
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func startSeedingData(_ sender: Any) {
-        self.authorizeHealthKit()
+    func setupTextField(){
+        urlTextField.delegate = self
     }
     
+    func setupTableView(){
+        typesTableView.dataSource = self
+        typesTableView.delegate = self
+    }
+    
+    func setupSwitch(){
+        fileSelectorSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func switchChanged(mSwitch: UISwitch) {
+        removeData()
+        self.urlTextField.isHidden = !mSwitch.isOn
+    }
+    
+    @IBAction func startSeedingData(_ sender: Any) {
+        removeData()
+        self.authorizeHealthKit()
+    }
+        
     func authorizeHealthKit(){
         let shareReadObjectTypes:Set<HKSampleType> = [
-            HKQuantityType.quantityType(forIdentifier:HKQuantityTypeIdentifier.stepCount)!,
-            HKQuantityType.quantityType(forIdentifier:HKQuantityTypeIdentifier.flightsClimbed)!,
+            HKQuantityType.quantityType(forIdentifier: .stepCount)!,
+            HKQuantityType.quantityType(forIdentifier: .flightsClimbed)!,
             // Body Measurements
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyFatPercentage)!,
+            HKQuantityType.quantityType(forIdentifier:  .height)!,
+            HKQuantityType.quantityType(forIdentifier:  .bodyMass)!,
+            HKQuantityType.quantityType(forIdentifier:  .bodyFatPercentage)!,
+            HKQuantityType.quantityType(forIdentifier:  .waistCircumference)!,
             // Nutrient
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatTotal)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatSaturated)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCarbohydrates)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodGlucose)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietaryProtein)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietaryFatTotal)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietaryFatSaturated)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietaryCarbohydrates)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietarySugar)!,
+            HKQuantityType.quantityType(forIdentifier:  .dietaryEnergyConsumed)!,
+            HKQuantityType.quantityType(forIdentifier:  .bloodGlucose)!,
             // Fitness
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier:  .activeEnergyBurned)!,
             HKWorkoutType.workoutType(),
-            // Category
-            HKQuantityType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis)!,
             
             //Heart rate
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRateVariabilitySDNN)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.restingHeartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+            HKQuantityType.quantityType(forIdentifier: .restingHeartRate)!,
 
             // Measurements
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyFatPercentage)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.leanBodyMass)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMassIndex)!,
+            HKQuantityType.quantityType(forIdentifier: .bodyFatPercentage)!,
+            HKQuantityType.quantityType(forIdentifier: .height)!,
+            HKQuantityType.quantityType(forIdentifier: .bodyMass)!,
+            HKQuantityType.quantityType(forIdentifier: .leanBodyMass)!,
+            HKQuantityType.quantityType(forIdentifier: .bodyMassIndex)!,
             // Nutrients
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatTotal)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatPolyunsaturated)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatMonounsaturated)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFatSaturated)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCholesterol)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySodium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCarbohydrates)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFiber)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminA)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminB6)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminB12)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminC)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminD)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminE)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryVitaminK)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCalcium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryIron)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryThiamin)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryRiboflavin)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryNiacin)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryFolate)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryBiotin)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryPantothenicAcid)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryPhosphorus)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryIodine)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryMagnesium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryZinc)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySelenium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCopper)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryManganese)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryChromium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryMolybdenum)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryChloride)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryPotassium)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryCaffeine)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryWater)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.uvExposure)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFatTotal)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFatPolyunsaturated)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFatMonounsaturated)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFatSaturated)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryCholesterol)!,
+            HKQuantityType.quantityType(forIdentifier: .dietarySodium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryCarbohydrates)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFiber)!,
+            HKQuantityType.quantityType(forIdentifier: .dietarySugar)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryEnergyConsumed)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryProtein)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminA)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB6)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminB12)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminC)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminD)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminE)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryVitaminK)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryCalcium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryIron)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryThiamin)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryRiboflavin)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryNiacin)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryFolate)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryBiotin)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryPantothenicAcid)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryPhosphorus)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryIodine)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryMagnesium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryZinc)!,
+            HKQuantityType.quantityType(forIdentifier: .dietarySelenium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryCopper)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryManganese)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryChromium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryMolybdenum)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryChloride)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryPotassium)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryCaffeine)!,
+            HKQuantityType.quantityType(forIdentifier: .dietaryWater)!,
+            HKQuantityType.quantityType(forIdentifier: .uvExposure)!,
             // Fitness
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceWalkingRunning)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.distanceCycling)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.flightsClimbed)!,
+            HKQuantityType.quantityType(forIdentifier: .stepCount)!,
+            HKQuantityType.quantityType(forIdentifier: .pushCount)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceWheelchair)!,
+            HKQuantityType.quantityType(forIdentifier: .swimmingStrokeCount)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceDownhillSnowSports)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+            HKQuantityType.quantityType(forIdentifier: .distanceCycling)!,
+            HKQuantityType.quantityType(forIdentifier: .basalEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKQuantityType.quantityType(forIdentifier: .flightsClimbed)!,
             // Results
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyTemperature)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureSystolic)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodPressureDiastolic)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.respiratoryRate)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.basalBodyTemperature)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodGlucose)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.oxygenSaturation)!,
-            HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bloodAlcoholContent)!]
+            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
+            HKQuantityType.quantityType(forIdentifier: .bodyTemperature)!,
+            HKQuantityType.quantityType(forIdentifier: .vo2Max)!,
+            HKQuantityType.quantityType(forIdentifier: .bloodPressureSystolic)!,
+            HKQuantityType.quantityType(forIdentifier: .bloodPressureDiastolic)!,
+            HKQuantityType.quantityType(forIdentifier: .insulinDelivery)!,
+            HKQuantityType.quantityType(forIdentifier: .numberOfTimesFallen)!,
+            HKQuantityType.quantityType(forIdentifier: .peripheralPerfusionIndex)!,
+            HKQuantityType.quantityType(forIdentifier: .forcedVitalCapacity)!,
+            HKQuantityType.quantityType(forIdentifier: .forcedExpiratoryVolume1)!,
+            HKQuantityType.quantityType(forIdentifier: .peakExpiratoryFlowRate)!,
+            HKQuantityType.quantityType(forIdentifier: .respiratoryRate)!,
+            HKQuantityType.quantityType(forIdentifier: .basalBodyTemperature)!,
+            HKQuantityType.quantityType(forIdentifier: .bloodGlucose)!,
+            HKQuantityType.quantityType(forIdentifier: .oxygenSaturation)!,
+            HKQuantityType.quantityType(forIdentifier: .bloodAlcoholContent)!,
+            HKQuantityType.quantityType(forIdentifier: .electrodermalActivity)!,
+            HKQuantityType.quantityType(forIdentifier: .inhalerUsage)!,
+            
+            //Audio
+            HKQuantityType.quantityType(forIdentifier: .environmentalAudioExposure)!,
+            HKQuantityType.quantityType(forIdentifier: .headphoneAudioExposure)!,
+
+
+            // Category
+            HKCategoryType.categoryType(forIdentifier: .cervicalMucusQuality)!,
+            HKCategoryType.categoryType(forIdentifier: .intermenstrualBleeding)!,
+            HKCategoryType.categoryType(forIdentifier: .ovulationTestResult)!,
+            HKCategoryType.categoryType(forIdentifier: .sexualActivity)!,
+            HKCategoryType.categoryType(forIdentifier: .toothbrushingEvent)!,
+            HKCategoryType.categoryType(forIdentifier: .mindfulSession)!,
+            HKCategoryType.categoryType(forIdentifier: .sleepAnalysis)!,
+            HKCategoryType.categoryType(forIdentifier: .menstrualFlow)!]
+        
+            // Sample Type
+            //HKSampleType.audiogramSampleType()
+        
+            /* Not allowed writing permissions */
+        
+            //HKQuantityType.quantityType(forIdentifier: .nikeFuel)!,
+            //HKCategoryType.categoryType(forIdentifier: .lowHeartRateEvent)!,
+            //HKCategoryType.categoryType(forIdentifier: .highHeartRateEvent)!,
+            //HKCategoryType.categoryType(forIdentifier: .irregularHeartRhythmEvent)!,
+            //HKCategoryType.categoryType(forIdentifier: .appleStandHour)!,
+            //HKCategoryType.categoryType(forIdentifier: .audioExposureEvent)!,
 
         if !HKHealthStore.isHealthDataAvailable(){
             print("Error ocurred")
             return
         }
-        
+               
         healthStore.requestAuthorization(toShare: shareReadObjectTypes, read: shareReadObjectTypes, completion: {(success, error) -> Void in
             if let error = error {
                 print(error)
             } else {
-                print("Read Write Authorization succeeded")
-                self.readJSONFromFile()
+                print("Read Write Authorization succeeded, starting to seed data")
+                self.selectDataSource()
             }
         })
     }
     
+    func selectDataSource(){
+        DispatchQueue.main.async {
+            if self.fileSelectorSwitch.isOn {
+                if (self.sharedMemory.hkDataUrl != nil && self.sharedMemory.hkDataUrl != ""){
+                    self.readJsonFromURL(url: self.sharedMemory.hkDataUrl!)
+                }else{
+                    print("Please add an URL to fetch the data :D")
+                }
+            }else{
+                self.readJSONFromFile()
+            }
+        }
+    }
+    
+    func removeData(){
+        self.numberOfSamplesLabel.text = "0"
+        self.allHKSampels.removeAll()
+        self.typesTableView.reloadData()
+    }
     
     func readJSONFromFile()
     {
@@ -148,39 +232,65 @@ class ViewController: UIViewController {
                 guard let jsonDataArray = json as? [[String: Any]] else {return}
                 
                 for record in jsonDataArray{
-                    self.allHKRecords.append(HKRecord(record))
                     self.saveHKRecord(item: HKRecord(record), withSuccess: {
                         // success
                         print("record added to array")
                     }, failure: {
                         // fail
                         print("fail to process record")
+                        print(record)
                     })
                 }
-            } catch {
-                print("Error reading file")
+                self.saveAllDataSamples()
+            } catch let err {
+                print(err.localizedDescription)
             }
         }
     }
     
-    
-    @IBAction func seedQuantityData(_ sender: Any) {
-        
+    func readJsonFromURL(url: String){
+        self.loadingDialog()
+
+        guard let url = URL(string: url) else {return}
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        guard let dataResponse = data, error == nil else {
+                  print(error?.localizedDescription ?? "Response Error")
+                  return
+            }
+            do{
+                let json = try JSONSerialization.jsonObject(with: dataResponse, options: [])
+                
+                guard let jsonDataArray = json as? [[String: Any]] else {return}
+                
+                for record in jsonDataArray{
+                    self.saveHKRecord(item: HKRecord(record), withSuccess: {
+                        // success
+                        print("record added to array")
+                    }, failure: {
+                        // fail
+                        print("fail to process record")
+                        print(record)
+                    })
+                }
+                self.saveAllDataSamples()
+             } catch let parsingError {
+                print("Error", parsingError)
+           }
+        }
+        task.resume()
+        dismiss(animated: false, completion: nil)
     }
-    
-    @IBAction func saveValues(_ sender: Any) {
-        saveAllSamples()
-    }
-    
-        
+            
     func saveHKRecord(item:HKRecord, withSuccess successBlock: @escaping () -> Void, failure failiureBlock: @escaping () -> Void) {
       
         let unit = HKUnit.init(from: item.unit ?? "")
         let quantity = HKQuantity(unit: unit, doubleValue: item.value)
-        
+                
         var hkSample: HKSample? = nil
-        if let type = HKQuantityType.quantityType(forIdentifier:  HKQuantityTypeIdentifier(rawValue: item.type)) {
-            hkSample = HKQuantitySample.init(type: type, quantity: quantity, start: item.startDate, end: item.endDate)
+        if let type = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier(rawValue: item.type)) {
+            hkSample = HKQuantitySample.init(type: type, quantity: quantity, start: item.startDate, end: item.endDate, metadata: item.metadata)
+        }else if let type = HKCategoryType.categoryType(forIdentifier: HKCategoryTypeIdentifier(rawValue: item.type)){
+            hkSample = HKCategorySample.init(type: type, value: Int(item.value), start: item.startDate, end: item.endDate, metadata: item.metadata)
         }else if item.type == HKObjectType.workoutType().identifier {
             hkSample = HKWorkout.init(activityType: item.activityType ?? HKWorkoutActivityType(rawValue: 0)!, start: item.startDate, end: item.endDate, duration: item.value, totalEnergyBurned: HKQuantity(unit: HKUnit.init(from: item.totalEnergyBurnedUnit), doubleValue: item.totalEnergyBurned), totalDistance: HKQuantity(unit: HKUnit.init(from: item.totalDistanceUnit), doubleValue: item.totalDistance), device: nil, metadata: item.metadata)
         } else {
@@ -195,45 +305,95 @@ class ViewController: UIViewController {
         }
     }
     
-    func saveAllSamples() {
+    func saveAllDataSamples() {
         saveSamplesToHK(samples: self.allHKSampels, withSuccess: {
             print("Samples updated successfully")
+            DispatchQueue.main.async {
+                self.showSuccessMessage()
+                self.numberOfSamplesLabel.text = String(self.allHKSampels.count)
+            }
         }, failure: {
              print("Error updating samples")
         })
     }
-    
-    func saveSamplesToHK (samples:[HKSample], withSuccess successBlock: @escaping () -> Void, failure failiureBlock: @escaping () -> Void) {
+      
+    func saveSamplesToHK(samples:[HKSample], withSuccess successBlock: @escaping () -> Void, failure failiureBlock: @escaping () -> Void) {
         healthStore.save(samples, withCompletion: { (success, error) in
             if (!success) {
                 print(String(format: "An error occured saving the sample. The error was: %@.", error.debugDescription))
                 failiureBlock()
             }
             DispatchQueue.main.async {
+                self.typesTableView.reloadData()
                 print(samples.count)
             }
             successBlock()
         })
     }
     
-    func writeDataToHealthKit(){
-        /*createRandomRecords()
-        healthStore.save(allHKSampels, withCompletion: {(success, error) in
-                       print("Saved \(success), error \(error)")
-                   })*/
-        
-        /*let weight = Double(self.txtWeight.text!)
-        let today = NSDate()
+    private func loadingDialog(){
+        let alert = UIAlertController(title: nil, message: "Give me a sec...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+    }
     
-        if let type = HKSampleType.quantityType(forIdentifier: .bodyMass){
-            let quantity = HKQuantity(unit: HKUnit.gram(), doubleValue: Double(weight!))
-            let sample = HKQuantitySample(type: type, quantity: quantity, start: today as Date, end: today as Date)
-            
-            healthStore.save(sample, withCompletion: {(success, error) in
-                print("Saved \(success), error \(error)")
+    private func showSuccessMessage(){
+            let alert = UIAlertController(title: "Heyy Youu!!!", message: "All the data has been saved succesfully!! 😎", preferredStyle: UIAlertController.Style.alert)
+
+            let ok = UIAlertAction(title: "Niiiiceeee", style: .default, handler: { action in
             })
-            
-        }*/
+            alert.addAction(ok)
+
+            self.present(alert, animated: true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.sharedMemory.hkDataUrl = self.urlTextField.text
+        self.urlTextField.isHidden = true
+        self.urlTextField.resignFirstResponder()
+        self.readJsonFromURL(url: self.sharedMemory.hkDataUrl!)
+        return true
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if allHKSampels.count > 0 {
+            return 1
+        }else{
+            self.emptyMessage(message: "Theres no data to show yet")
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return allHKSampels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = typesTableView.dequeueReusableCell(withIdentifier: "HKTypeCell", for: indexPath)
+        if  indexPath.row < allHKSampels.count{
+            cell.textLabel!.text = "\(allHKSampels[indexPath.row].sampleType)"
+        }
+        return cell
+    }
+    
+    func emptyMessage(message:String) {
+        let rect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+        let messageLabel = UILabel(frame: rect)
+        messageLabel.text = message
+        messageLabel.textColor = .black
+        messageLabel.numberOfLines = 0;
+        messageLabel.textAlignment = .center;
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        messageLabel.sizeToFit()
+
+        self.typesTableView.backgroundView = messageLabel;
+        self.typesTableView.separatorStyle = .none;
     }
 }
 

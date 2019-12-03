@@ -10,6 +10,8 @@
 		282441C2235E02F8004F4EBA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 282441C1235E02F8004F4EBA /* HealthKit.framework */; };
 		282441C6235E1DAB004F4EBA /* HKRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282441C5235E1DAB004F4EBA /* HKRecord.swift */; };
 		282441CA235F4716004F4EBA /* export.json in Resources */ = {isa = PBXBuildFile; fileRef = 282441C9235F4716004F4EBA /* export.json */; };
+		2850A420236B20160026A202 /* SharedMemory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850A41F236B20160026A202 /* SharedMemory.swift */; };
+		2850A422236B21270026A202 /* SharedMemoryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850A421236B21270026A202 /* SharedMemoryHelper.swift */; };
 		28680CD4235DFEF5000308FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28680CD3235DFEF5000308FF /* AppDelegate.swift */; };
 		28680CD6235DFEF5000308FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28680CD5235DFEF5000308FF /* SceneDelegate.swift */; };
 		28680CD8235DFEF5000308FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28680CD7235DFEF5000308FF /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		282441C1235E02F8004F4EBA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		282441C5235E1DAB004F4EBA /* HKRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKRecord.swift; sourceTree = "<group>"; };
 		282441C9235F4716004F4EBA /* export.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = export.json; sourceTree = "<group>"; };
+		2850A41F236B20160026A202 /* SharedMemory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMemory.swift; sourceTree = "<group>"; };
+		2850A421236B21270026A202 /* SharedMemoryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedMemoryHelper.swift; sourceTree = "<group>"; };
 		28680CD0235DFEF5000308FF /* HealthKitDataSeeds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthKitDataSeeds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28680CD3235DFEF5000308FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28680CD5235DFEF5000308FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,15 +121,17 @@
 		28680CD2235DFEF5000308FF /* HealthKitDataSeeds */ = {
 			isa = PBXGroup;
 			children = (
+				28680CD7235DFEF5000308FF /* ViewController.swift */,
+				282441C5235E1DAB004F4EBA /* HKRecord.swift */,
+				2850A41F236B20160026A202 /* SharedMemory.swift */,
+				2850A421236B21270026A202 /* SharedMemoryHelper.swift */,
+				28680CD9235DFEF5000308FF /* Main.storyboard */,
+				28680CDE235DFEF5000308FF /* LaunchScreen.storyboard */,
+				28680CDC235DFEF5000308FF /* Assets.xcassets */,
+				28680CE1235DFEF5000308FF /* Info.plist */,
 				282441BF235E02F8004F4EBA /* HealthKitDataSeeds.entitlements */,
 				28680CD3235DFEF5000308FF /* AppDelegate.swift */,
 				28680CD5235DFEF5000308FF /* SceneDelegate.swift */,
-				28680CD7235DFEF5000308FF /* ViewController.swift */,
-				282441C5235E1DAB004F4EBA /* HKRecord.swift */,
-				28680CD9235DFEF5000308FF /* Main.storyboard */,
-				28680CDC235DFEF5000308FF /* Assets.xcassets */,
-				28680CDE235DFEF5000308FF /* LaunchScreen.storyboard */,
-				28680CE1235DFEF5000308FF /* Info.plist */,
 			);
 			path = HealthKitDataSeeds;
 			sourceTree = "<group>";
@@ -280,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2850A420236B20160026A202 /* SharedMemory.swift in Sources */,
 				28680CD8235DFEF5000308FF /* ViewController.swift in Sources */,
 				28680CD4235DFEF5000308FF /* AppDelegate.swift in Sources */,
+				2850A422236B21270026A202 /* SharedMemoryHelper.swift in Sources */,
 				28680CD6235DFEF5000308FF /* SceneDelegate.swift in Sources */,
 				282441C6235E1DAB004F4EBA /* HKRecord.swift in Sources */,
 			);
